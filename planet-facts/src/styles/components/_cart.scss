@@ -1,0 +1,124 @@
+@use "../abstracts" as *;
+
+.cart {
+  @include flexbox-config($flex-direction: column);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  max-width: 360px;
+  position: relative;
+  z-index: 400;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 14px 21px 1px rgb(179 172 179);
+  width: calc(100vw - 20px);
+  height: 256px;
+  position: absolute;
+  top: 33px;
+  left: -4.8em;
+  translate: 10%;
+
+  @include xxs-mobile-breakpoint {
+    top: 4em;
+    left: -11em;
+    translate: -1%;
+  }
+  @include extra-sm-phones {
+    width: 300px;
+    top: 4em;
+    left: -13em;
+    translate: -3%;
+  }
+  @include md-phone {
+    left: -13em;
+    translate: -10%;
+  }
+  @include main-phone-breakpoint {
+    left: -14em;
+    translate: -10%;
+  }
+
+  @include xs-tablets {
+    width: 360px;
+    left: -18em;
+    translate: -10%;
+  }
+
+  @include lg-tablets {
+    border-radius: 0 0 10px 10px;
+    top: 3.5em;
+    left: -13em;
+  }
+}
+
+.cart_heading {
+  padding-bottom: 1em;
+  font: {
+    size: $rg-font;
+    weight: bold;
+  }
+  margin: 1em;
+
+  + .cart_content {
+    border-top: 0.1px solid $nav-border;
+    padding-top: 2em;
+    @include flexbox-config($justify-content: center);
+
+    .cart__content-product {
+      font-size: $rg-font;
+      color: $black-text;
+      @include flexbox-config(
+        $justify-content: center,
+        $align-items: center,
+        $flex-direction: column
+      );
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.cart__content-product-details {
+  @include flexbox-config($flex-direction: row, $justify-content: space-evenly);
+  max-width: 100%;
+  width: 100%;
+
+  .cart__content-product-img {
+    @include extra-sm-phones-max {
+      width: 30px;
+      height: 30px;
+    }
+    max-width: 50px;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+  }
+  .cart__content-product-info-heading {
+    font: {
+      size: $rg-font;
+      weight: normal;
+    }
+  }
+  .cart__content-product-trash {
+    max-width: 14px;
+    height: 16px;
+    display: block;
+    align-self: center;
+  }
+}
+.cart__content-product-info-quantity {
+  @include flexbox-config($flex-direction: row, $justify-content: flex-start);
+  color: currentColor;
+  font-size: $rg-font;
+  margin-top: 1em;
+
+  .cart__content-product-info-quantity-amount {
+    font-weight: 800;
+    margin-left: 2em;
+  }
+}
+
+.cart.active {
+  visibility: visible;
+  opacity: 1;
+}
