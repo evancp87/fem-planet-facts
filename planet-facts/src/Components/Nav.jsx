@@ -37,13 +37,13 @@ const Nav = (props) => {
 
   // loop over data.json planet names- each planet has an onClick that makes a fetch call to the json data.json for the relevant planet
   return (
-    <nav className="container is-fullhd is-flex bulma-responsive is-justify-content-space-between is-align-items-center border py-4  nav-background">
+    <nav className="container is-fullhd is-flex bulma-responsive is-justify-content-space-between  border py-4  nav-background">
       <div>
         <h1 className="navbar-brand is-align-self-center pl-3 pt-2 is-size-4 has-text-white is-uppercase logo">
           The Planets
         </h1>
       </div>
-      <ul className="planet-list">
+      <ul className="planet-list is-flex">
         {planets.map((planet, index) => (
           <li
             key={index}

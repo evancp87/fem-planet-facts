@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import chevron from "../images/icon-chevron.svg";
+import { PlanetsContext } from "../services/Planets/PlanetsContext";
 
 const Sidebar = ({ setCurrPlanet, colors, planets }) => {
   const [overlay, setOverlay] = useState(false);
@@ -9,10 +10,11 @@ const Sidebar = ({ setCurrPlanet, colors, planets }) => {
   const handleChangePlanet = (planet) => {
     setCurrPlanet(planet);
   };
+
   console.log("the planets are:", planets, colors);
   return (
     <aside
-      className="sidebar"
+      className="sidebar is-absolute"
       // className={classnames("sidebar", {
       //   active: props.openSidebar,
       // })}
@@ -30,7 +32,7 @@ const Sidebar = ({ setCurrPlanet, colors, planets }) => {
                   borderRadius: 50,
                 }}
               ></div>
-              {planet}
+              <p onClick={() => handleChangePlanet(planet)}>{planet}</p>
             </div>
             <img
               src={chevron}

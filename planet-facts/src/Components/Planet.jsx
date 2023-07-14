@@ -16,6 +16,7 @@ const Planet = (props) => {
     colors,
     currPlanet,
     setData,
+    getPlanetNames,
   } = useContext(PlanetsContext);
   console.log(setPlanetData);
   const [selectedTab, setSelectedTab] = useState("Overview");
@@ -67,16 +68,16 @@ const Planet = (props) => {
   return (
     <>
       <main className="grid">
+        <Sidebar
+          setCurrPlanet={setCurrPlanet}
+          planets={planets}
+          colors={colors}
+        />
         <PlanetImgs
           selectedTab={selectedTab}
           planetImage={planetImage}
           planetInternalImage={planetInternalImage}
           planetGeologyInternal={planetGeologyInternal}
-        />
-        <Sidebar
-          setCurrPlanet={setCurrPlanet}
-          planets={planets}
-          colors={colors}
         />
         <div className="planet-text-container mobile-widths-planet-data">
           <PlanetData
