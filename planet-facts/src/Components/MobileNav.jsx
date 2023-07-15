@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { PlanetsContext } from "../services/Planets/PlanetsContext";
 
 const MobileNav = (props) => {
+  const [selectedTab, setSelectedTab] = useState("Overview");
+
   const handleChangeInfo = () => {
     setData(currPlanet);
   };
@@ -10,22 +12,28 @@ const MobileNav = (props) => {
   console.log("The context is:", PlanetsContext);
   return (
     <div className="mobile-nav">
-      <div className="is-flex is-flex-direction-row is-flex is-align-items-center  is-justify-content-space-between py-4 mx-3 is-fullwidth">
+      <div className="mobile-nav__container ">
         <button
-          onClick={() => handleChangeInfo}
-          className="is-clickable no-border tab-btns  mx-2 is-uppercase"
+          onClick={() => handleChangeInfo("Overview")}
+          className={`mobile__nav-container-tab  ${
+            selectedTab === "Overview" ? "active" : " "
+          }`}
         >
           Overview
         </button>
         <button
-          onClick={() => handleChangeInfo}
-          className="is-clickable no-border mx-2 tab-btns  is-uppercase"
+          onClick={() => handleChangeInfo("Internal Structure")}
+          className={` mobile__nav-container-tab  ${
+            selectedTab === "Internal Structure" ? "active" : " "
+          }`}
         >
           Structure
         </button>
         <button
-          onClick={() => handleChangeInfo}
-          className="is-clickable no-border  mx-2 tab-btns is-uppercase"
+          onClick={() => handleChangeInfo("Surface Geology")}
+          className={` mobile__nav-container-tab ${
+            selectedTab === "Surface Geology" ? "active" : " "
+          }`}
         >
           Geology
         </button>

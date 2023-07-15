@@ -90,10 +90,11 @@ const Planet = (props) => {
             overviewSource={overviewSource}
             selectedTab={selectedTab}
           />
-          <div className="  is-fullwidth desktop-options">
+
+          <div className="  w-full desktop-options">
             <button
               onClick={() => handleChangeInfo("Overview")}
-              className={`is-clickable no-bg mx-2 mt-2  border-full ${
+              className={` no-bg mx-2 mt-2  border-solid ${
                 selectedTab === "Overview" ? "active" : " "
               }`}
             >
@@ -101,7 +102,7 @@ const Planet = (props) => {
             </button>
             <button
               onClick={() => handleChangeInfo("Internal Structure")}
-              className={`is-clickable no-bg mx-2 mt-2  border-full ${
+              className={` no-bg mx-2 mt-2  border-solid ${
                 selectedTab === "Internal Structure" ? "active" : " "
               }`}
             >
@@ -109,7 +110,7 @@ const Planet = (props) => {
             </button>
             <button
               onClick={() => handleChangeInfo("Surface Geology")}
-              className={`is-clickable no-bg mx-2 mt-2  border-full ${
+              className={` no-bg mx-2 mt-2  border-solid ${
                 selectedTab === "Surface Geology" ? "active" : " "
               }`}
             >

@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+.desktop-options {
+  display: none;
+
+  @include sm-tablets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // font-size: $tab-btns;
+    // font-weight: $spartanBold;
+    width: clamp(12.5rem, 3.125rem + 30vw, 21.875rem);
+  }
+
+  button {
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    display: inline-flex;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    background: transparent;
+
+    border: 1px solid #838391;
+  }
+}
+
+.tab-btns {
+  &:active {
+    border-bottom: 3px solid green;
+  }
+}
+.tab-value {
+  color: $white;
+  margin-left: 1rem;
+  white-space: nowrap;
+}

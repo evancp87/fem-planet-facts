@@ -11,14 +11,14 @@ const PlanetData = ({
   name,
 }) => {
   return (
-    <div className="planet-text has-text-white">
-      <h1 className="mt-4 is-uppercase heading-one-font">{name}</h1>
+    <div className="planet-text text-slate-100">
+      <h1 className="mt-4 uppercase heading-one-font">{name}</h1>
 
       <p className=" mt-2 body-size">{overview}</p>
-      <cite className="my-2 is-flex is-justify-content-center source">
+      <cite className="my-2 flex justify-center source">
         <span className="source-heading">Source:</span>{" "}
         <a href={overviewSource}>Wikipedia</a>
-        <img src={sourceIcon} alt="chevron" className="ml-3 " />
+        <img src={sourceIcon} alt="chevron" className="chevron " />
         {/* </span> */}
       </cite>
     </div>

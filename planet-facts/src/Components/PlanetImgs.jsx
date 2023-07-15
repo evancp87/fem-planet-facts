@@ -20,12 +20,12 @@ const PlanetImgs = ({
   }
 
   return (
-    <div className="mt-3 flex-prop planet-img is-relative">
-      <img src={activeImg} alt="#" className="is-relative" />
+    <div className="mt-3 flex-prop planet-img-container is-relative">
+      <img src={activeImg} alt="#" className="planet-img" />
 
       {selectedTab === "Surface Geology" && (
-        <div className="mt-3 flex-prop geology-img is-absolute">
-          <img src={planetGeologyInternal} alt="#" className="is-absolute" />
+        <div className="mt-3 flex-prop geology-img absolute">
+          <img src={planetGeologyInternal} alt="#" className="absolute" />
         </div>
       )}
     </div>

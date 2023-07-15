@@ -14,7 +14,7 @@ const Sidebar = ({ setCurrPlanet, colors, planets }) => {
   console.log("the planets are:", planets, colors);
   return (
     <aside
-      className="sidebar is-absolute"
+      className="sidebar absolute"
       // className={classnames("sidebar", {
       //   active: props.openSidebar,
       // })}
@@ -34,11 +34,7 @@ const Sidebar = ({ setCurrPlanet, colors, planets }) => {
               ></div>
               <p onClick={() => handleChangePlanet(planet)}>{planet}</p>
             </div>
-            <img
-              src={chevron}
-              alt="chevron"
-              className="chevron has-text-white"
-            />
+            <img src={chevron} alt="chevron" className="chevron" />
           </li>
         ))}
       </ul>

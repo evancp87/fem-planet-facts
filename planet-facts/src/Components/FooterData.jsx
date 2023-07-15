@@ -1,31 +1,22 @@
 const FooterData = ({ rotation, revolution, temperature, radius }) => {
   return (
-    <footer className="is-flex is-justify-content-center pt-2 pb-6 ">
-      <ul className="footer-data-responsive footer-list mobile-widths-footer has-text-white ">
-        <li className="is-uppercase border-full my-1  footer-data-heading footer-data-responsive-item p-2  ">
+    <footer className="footer ">
+      <ul className="footer-data-responsive footer-list mobile-widths-footer  ">
+        <li className=" border-full  footer-data-heading footer-data-responsive-item   ">
           Rotation Time:
-          <span className="footer-data-value is-text-white is-uppercase">
-            {" "}
-            {rotation}
-          </span>
+          <span className="footer-data-value "> {rotation}</span>
         </li>
-        <li className="is-uppercase border-full my-1 footer-data-heading  footer-data-responsive-item p-2 ">
+        <li className=" border-solid footer-data-heading  footer-data-responsive-item  ">
           Revolution Time:
-          <span className="footer-data-value is-text-white ">
-            {" "}
-            {revolution}
-          </span>
+          <span className="footer-data-value  "> {revolution}</span>
         </li>
-        <li className="is-uppercase border-full my-1 footer-data-heading footer-data-responsive-item p-2  ">
+        <li className="  footer-data-heading footer-data-responsive-item   ">
           Radius:
-          <span className="footer-data-value is-text-white "> {radius}</span>
+          <span className="footer-data-value  "> {radius}</span>
         </li>
-        <li className="is-uppercase border-full my-1 footer-data-heading footer-data-responsive-item p-2  ">
+        <li className=" footer-data-heading footer-data-responsive-item   ">
           Average Temp.:
-          <span className="footer-data-value is-text-white ">
-            {" "}
-            {temperature}
-          </span>
+          <span className="footer-data-value  "> {temperature}</span>
         </li>
       </ul>
     </footer>

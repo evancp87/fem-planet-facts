@@ -1,0 +1,78 @@
+@use "../abstracts/" as *;
+
+.heading-one-font {
+  font-size: $planet-name;
+  font-family: $antonio-font;
+  font-weight: $antonioMedium;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.nav-background {
+  @include flexbox-config($justify-content: space-around, $align-items: center);
+  flex-wrap: wrap;
+  border-bottom: 1px solid #979797;
+}
+.planet-nav {
+  @include flexbox-config($justify-content: space-between);
+
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  color: #838391;
+  font-size: 11px;
+  padding: 1rem 0;
+
+  .planet-list {
+    display: flex;
+    margin-left: auto;
+  }
+  .hamburger {
+    @include sm-tablets {
+      display: none;
+    }
+  }
+}
+
+.navbar-brand {
+  color: #ffffff;
+  margin-left: 1em;
+}
+.nav-planet-list {
+  display: none;
+  @include sm-tablets {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.nav__planet-name {
+  color: #ffffff;
+  margin-right: 1rem;
+}
+
+a.navbar-burger {
+  @include sm-tablets {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  border-bottom: 1px solid $white;
+
+  @include sm-tablets {
+    display: none;
+  }
+  button {
+    font-size: 9px;
+    color: $lightGray;
+    background: none;
+    border: none;
+  }
+}
+
+.nav__hamburger {
+  margin-right: 1em;
+  @include sm-tablets {
+    display: none;
+  }
+}

@@ -1,0 +1,51 @@
+@use "../abstracts/" as *;
+
+.sidebar {
+  width: 100vw;
+  height: 200vh;
+  position: absolute;
+  z-index: 500;
+  top: 85px;
+  left: -100%;
+  bottom: 0;
+  right: 0;
+  background-color: $black;
+  .sidebar-list {
+    .sidebar-item {
+      border-bottom: 1px solid $white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: $spartan;
+    }
+
+    p {
+      color: #ffffff;
+    }
+  }
+}
+
+.sidebar.active {
+  left: 10px;
+}
+
+.absolute-nav {
+  position: absolute;
+}
+
+.planet-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .planet-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    color: $white;
+    + p {
+      margin-left: 1em;
+    }
+  }
+}

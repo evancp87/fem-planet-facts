@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+.mobile-nav {
+  border-bottom: 1px solid #979797;
+
+  @include sm-tablets {
+    display: none;
+  }
+  //   button {
+  //     font-size: 9px;
+  //     color: gray;
+  //     background: none;
+  //     border: none;
+  //   }
+  .mobile-nav__container {
+    @include flexbox-config(
+      $flex-direction: row,
+      $align-items: center,
+      $justify-content: space-evenly
+    );
+    margin-inline: 2em;
+    max-width: 100%;
+
+    .mobile__nav-container-tab {
+      background: none;
+      margin: {
+        inline: 2em;
+        block: 2em;
+      }
+      font-size: clamp(0.563rem, 0.398rem + 0.938vw, 0.75rem);
+    }
+  }
+}
