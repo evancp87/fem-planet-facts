@@ -10,10 +10,12 @@
   bottom: 0;
   right: 0;
   background-color: $black;
+  transition: left 0.7s ease-in-out;
   .sidebar-list {
+    padding-inline: 1em;
     .sidebar-item {
-      border-bottom: 1px solid $white;
-      padding: 1rem;
+      border-bottom: 1px solid #838391;
+      padding: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -26,8 +28,8 @@
   }
 }
 
-.sidebar.active {
-  left: 10px;
+.sidebar.activeSidebar {
+  left: 0px;
 }
 
 .absolute-nav {

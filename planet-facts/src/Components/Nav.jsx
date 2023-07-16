@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useContext, Dispatch } from "react";
 // import PlanetState from "../services/Planets/PlanetsContext";
+import { createPortal } from "react-dom";
 import { PlanetsContext } from "../services/Planets/PlanetsContext";
 import Planet from "./Planet";
 import Hamburger from "../images/icon-hamburger.svg";
-const Nav = (props) => {
-  const [openSidebar, setOpenSidebar] = useState(false);
-  const [overlay, setOverlay] = useState(false);
+const Nav = ({ handleOpenSidebar }) => {
   const { setCurrPlanet, colors, planets, getPlanetNames } =
     useContext(PlanetsContext);
 
@@ -14,16 +13,6 @@ const Nav = (props) => {
     planets.map((planet) => planet)
   );
   // for open and closing of sidebar with hamburger
-  const handleOpenSidebar = () => {
-    setOpenSidebar(!openSidebar);
-    setOverlay(!overlay);
-  };
-
-  const handleCloseSidebar = (e) => {
-    e.stopPropagation();
-    setOpenSidebar(false);
-    setOverlay(false);
-  };
 
   const handleChangePlanet = (planet) => {
     console.log("i fired");

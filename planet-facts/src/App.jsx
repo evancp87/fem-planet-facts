@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import "./styles/App.css";
 
 // import PlanetState from "../services/Planets/PlanetsContext";
@@ -11,13 +11,17 @@ import PlanetState from "../src/services/Planets/PlanetsContext.jsx";
 import { BrowserRouter, Outlet, Routes, Route } from "react-router-dom";
 
 function App() {
+  const [openSidebar, setOpenSidebar] = useState(false);
+  const handleOpenSidebar = () => {
+    setOpenSidebar(!openSidebar);
+  };
   return (
     <>
       <PlanetState>
-        <Nav />
+        <Nav handleOpenSidebar={handleOpenSidebar} />
         <MobileNav />
 
-        <Planet />
+        <Planet openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
         <Routes>
           <Route path="/planet" element={<Planet />} />
         </Routes>

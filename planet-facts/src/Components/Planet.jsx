@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 import { PlanetsContext } from "../services/Planets/PlanetsContext";
 import classnames from "classnames";
 
-const Planet = (props) => {
+const Planet = ({ openSidebar, setOpenSidebar }) => {
   // onLoad loads default state- mercury as the default planet & the overview as the default data
   const {
     setPlanetData,
@@ -72,6 +72,8 @@ const Planet = (props) => {
           setCurrPlanet={setCurrPlanet}
           planets={planets}
           colors={colors}
+          openSidebar={openSidebar}
+          setOpenSidebar={setOpenSidebar}
         />
         <PlanetImgs
           selectedTab={selectedTab}
@@ -94,7 +96,7 @@ const Planet = (props) => {
           <div className="  w-full desktop-options">
             <button
               onClick={() => handleChangeInfo("Overview")}
-              className={` no-bg mx-2 mt-2  border-solid ${
+              className={` tab-number  border-solid ${
                 selectedTab === "Overview" ? "active" : " "
               }`}
             >
@@ -102,7 +104,7 @@ const Planet = (props) => {
             </button>
             <button
               onClick={() => handleChangeInfo("Internal Structure")}
-              className={` no-bg mx-2 mt-2  border-solid ${
+              className={` tab-number  border-solid ${
                 selectedTab === "Internal Structure" ? "active" : " "
               }`}
             >
@@ -110,7 +112,7 @@ const Planet = (props) => {
             </button>
             <button
               onClick={() => handleChangeInfo("Surface Geology")}
-              className={` no-bg mx-2 mt-2  border-solid ${
+              className={` tab-number border-solid ${
                 selectedTab === "Surface Geology" ? "active" : " "
               }`}
             >
@@ -118,15 +120,20 @@ const Planet = (props) => {
             </button>
           </div>
         </div>
-
+        <FooterData
+          rotation={rotation}
+          temperature={temperature}
+          revolution={revolution}
+          radius={radius}
+        />
         {/* each has onClick function to fetch selected data */}
       </main>
-      <FooterData
+      {/* <FooterData
         rotation={rotation}
         temperature={temperature}
         revolution={revolution}
         radius={radius}
-      />
+      /> */}
     </>
   );
 };

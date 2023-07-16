@@ -1,20 +1,29 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
+import { createPortal } from "react-dom";
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import chevron from "../images/icon-chevron.svg";
 import { PlanetsContext } from "../services/Planets/PlanetsContext";
 
-const Sidebar = ({ setCurrPlanet, colors, planets }) => {
+const Sidebar = ({
+  setCurrPlanet,
+  colors,
+  planets,
+  openSidebar,
+  setOpenSidebar,
+}) => {
   const [overlay, setOverlay] = useState(false);
 
   const handleChangePlanet = (planet) => {
     setCurrPlanet(planet);
+    setOpenSidebar(false);
   };
+  // const sidebarRef =useRef(null)
 
   console.log("the planets are:", planets, colors);
   return (
     <aside
-      className="sidebar absolute"
+      className={openSidebar ? "sidebar activeSidebar" : "sidebar absolute"}
       // className={classnames("sidebar", {
       //   active: props.openSidebar,
       // })}
