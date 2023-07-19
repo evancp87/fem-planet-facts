@@ -6,7 +6,13 @@ import Sidebar from "./Sidebar";
 import { PlanetsContext } from "../services/Planets/PlanetsContext";
 import classnames from "classnames";
 
-const Planet = ({ openSidebar, setOpenSidebar }) => {
+const Planet = ({
+  openSidebar,
+  setOpenSidebar,
+  // selectedTab,
+  // setSelectedTab,
+  // handleTabColor,
+}) => {
   // onLoad loads default state- mercury as the default planet & the overview as the default data
   const {
     setPlanetData,
@@ -17,9 +23,12 @@ const Planet = ({ openSidebar, setOpenSidebar }) => {
     currPlanet,
     setData,
     getPlanetNames,
+    selectedTab,
+    setSelectedTab,
+    handleTabColor,
   } = useContext(PlanetsContext);
   console.log(setPlanetData);
-  const [selectedTab, setSelectedTab] = useState("Overview");
+  // const [selectedTab, setSelectedTab] = useState("Overview");
 
   // data should live here and be passed to planetImgs, PlanetData and FooterData components as props
   useEffect(() => {
@@ -96,6 +105,12 @@ const Planet = ({ openSidebar, setOpenSidebar }) => {
           <div className="  w-full desktop-options">
             <button
               onClick={() => handleChangeInfo("Overview")}
+              style={handleTabColor(
+                colors,
+                "Overview",
+                currPlanet,
+                "backgroundColor"
+              )}
               className={` tab-number  border-solid ${
                 selectedTab === "Overview" ? "active" : " "
               }`}
@@ -104,6 +119,12 @@ const Planet = ({ openSidebar, setOpenSidebar }) => {
             </button>
             <button
               onClick={() => handleChangeInfo("Internal Structure")}
+              style={handleTabColor(
+                colors,
+                "Internal Structure",
+                currPlanet,
+                "backgroundColor"
+              )}
               className={` tab-number  border-solid ${
                 selectedTab === "Internal Structure" ? "active" : " "
               }`}
@@ -111,6 +132,12 @@ const Planet = ({ openSidebar, setOpenSidebar }) => {
               02 <span className="tab-value">Internal Structure</span>
             </button>
             <button
+              style={handleTabColor(
+                colors,
+                "Surface Geology",
+                currPlanet,
+                "backgroundColor"
+              )}
               onClick={() => handleChangeInfo("Surface Geology")}
               className={` tab-number border-solid ${
                 selectedTab === "Surface Geology" ? "active" : " "

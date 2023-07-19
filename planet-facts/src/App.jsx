@@ -12,16 +12,37 @@ import { BrowserRouter, Outlet, Routes, Route } from "react-router-dom";
 
 function App() {
   const [openSidebar, setOpenSidebar] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("Overview");
+
   const handleOpenSidebar = () => {
     setOpenSidebar(!openSidebar);
+  };
+
+  const handleTabColor = (obj, tab, planet, property) => {
+    if (selectedTab === tab) {
+      return {
+        [property]: obj[planet],
+      };
+    }
+    return {};
   };
   return (
     <>
       <PlanetState>
-        <Nav handleOpenSidebar={handleOpenSidebar} />
-        <MobileNav />
+        <Nav handleOpenSidebar={handleOpenSidebar} openSidebar={openSidebar} />
+        <MobileNav
+          handleTabColor={handleTabColor}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
 
-        <Planet openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
+        <Planet
+          openSidebar={openSidebar}
+          setOpenSidebar={setOpenSidebar}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+          handleTabColor={handleTabColor}
+        />
         <Routes>
           <Route path="/planet" element={<Planet />} />
         </Routes>

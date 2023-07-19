@@ -8,7 +8,7 @@ export const PlanetState = (props) => {
   const [data, setData] = useState({});
   const [planets, setPlanets] = useState([]);
   const [currPlanet, setCurrPlanet] = useState("Mercury");
-
+  const [selectedTab, setSelectedTab] = useState("Overview");
   // colors of planets
   const colors = {
     Mercury: "#DEF4FC",
@@ -29,6 +29,15 @@ export const PlanetState = (props) => {
     const planetNames = data.map((planet) => planet.name);
     setPlanets(planetNames);
   }, []);
+
+  const handleTabColor = (obj, tab, planet, property) => {
+    if (selectedTab === tab) {
+      return {
+        [property]: obj[planet],
+      };
+    }
+    return {};
+  };
 
   // gets api data and filters based on currentPlanet selection
   const setPlanetData = useCallback(async () => {
@@ -82,6 +91,9 @@ export const PlanetState = (props) => {
         colors,
         getPlanetNames,
         setPlanetData,
+        selectedTab,
+        setSelectedTab,
+        handleTabColor,
       }}
     >
       {children}
