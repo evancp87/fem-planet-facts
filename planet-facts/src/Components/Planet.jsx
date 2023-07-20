@@ -1,18 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+/* eslint react/prop-types: 0 */
+import React, { useEffect, useContext } from "react";
 import PlanetData from "./PlanetData";
 import PlanetImgs from "./PlanetImgs";
 import FooterData from "./FooterData";
 import Sidebar from "./Sidebar";
 import { PlanetsContext } from "../services/Planets/PlanetsContext";
-import classnames from "classnames";
 
-const Planet = ({
-  openSidebar,
-  setOpenSidebar,
-  // selectedTab,
-  // setSelectedTab,
-  // handleTabColor,
-}) => {
+const Planet = ({ openSidebar, setOpenSidebar }) => {
   // onLoad loads default state- mercury as the default planet & the overview as the default data
   const {
     setPlanetData,
@@ -22,13 +16,11 @@ const Planet = ({
     colors,
     currPlanet,
     setData,
-    getPlanetNames,
     selectedTab,
     setSelectedTab,
     handleTabColor,
   } = useContext(PlanetsContext);
   console.log(setPlanetData);
-  // const [selectedTab, setSelectedTab] = useState("Overview");
 
   // data should live here and be passed to planetImgs, PlanetData and FooterData components as props
   useEffect(() => {
@@ -52,31 +44,14 @@ const Planet = ({
     planetGeologyInternal,
   } = data;
 
-  console.log(
-    "The props are:",
-    name,
-    overviewContent,
-    overviewSource,
-    structureContent,
-    structureSource,
-    geologyContent,
-    geologySource,
-    rotation,
-    revolution,
-    radius,
-    temperature,
-    planetImage,
-    planetInternalImage,
-    planetGeologyInternal
-  );
-
+  // changes selected tab
   const handleChangeInfo = (tab) => {
     setSelectedTab(tab);
   };
 
   return (
     <>
-      <main className="grid">
+      <main className="planet">
         <Sidebar
           setCurrPlanet={setCurrPlanet}
           planets={planets}
@@ -85,12 +60,13 @@ const Planet = ({
           setOpenSidebar={setOpenSidebar}
         />
         <PlanetImgs
+          currPlanet={currPlanet}
           selectedTab={selectedTab}
           planetImage={planetImage}
           planetInternalImage={planetInternalImage}
           planetGeologyInternal={planetGeologyInternal}
         />
-        <div className="planet-text-container mobile-widths-planet-data">
+        <div className="planet__text-container --planet__mobile">
           <PlanetData
             name={name}
             overview={overviewContent}
@@ -101,8 +77,8 @@ const Planet = ({
             overviewSource={overviewSource}
             selectedTab={selectedTab}
           />
-
-          <div className="  w-full desktop-options">
+          {/* tabs */}
+          <div className="planet__tabs">
             <button
               onClick={() => handleChangeInfo("Overview")}
               style={handleTabColor(
@@ -111,11 +87,11 @@ const Planet = ({
                 currPlanet,
                 "backgroundColor"
               )}
-              className={` tab-number  border-solid ${
+              className={` planet__tab-number  ${
                 selectedTab === "Overview" ? "active" : " "
               }`}
             >
-              01 <span className="tab-value">Overview</span>{" "}
+              01 <span className="planet__tab-value">Overview</span>{" "}
             </button>
             <button
               onClick={() => handleChangeInfo("Internal Structure")}
@@ -125,11 +101,11 @@ const Planet = ({
                 currPlanet,
                 "backgroundColor"
               )}
-              className={` tab-number  border-solid ${
+              className={` planet__tab-number  ${
                 selectedTab === "Internal Structure" ? "active" : " "
               }`}
             >
-              02 <span className="tab-value">Internal Structure</span>
+              02 <span className="planet__tab-value">Internal Structure</span>
             </button>
             <button
               style={handleTabColor(
@@ -139,11 +115,11 @@ const Planet = ({
                 "backgroundColor"
               )}
               onClick={() => handleChangeInfo("Surface Geology")}
-              className={` tab-number border-solid ${
+              className={` planet__tab-number ${
                 selectedTab === "Surface Geology" ? "active" : " "
               }`}
             >
-              03 <span className="tab-value">Surface Geology</span>{" "}
+              03 <span className="planet__tab-value">Surface Geology</span>{" "}
             </button>
           </div>
         </div>
@@ -155,12 +131,6 @@ const Planet = ({
         />
         {/* each has onClick function to fetch selected data */}
       </main>
-      {/* <FooterData
-        rotation={rotation}
-        temperature={temperature}
-        revolution={revolution}
-        radius={radius}
-      /> */}
     </>
   );
 };

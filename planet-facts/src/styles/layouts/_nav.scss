@@ -1,6 +1,6 @@
 @use "../abstracts/" as *;
 
-.heading-one-font {
+.planet__heading-one-font {
   font-size: $planet-name;
   font-family: $antonio-font;
   font-weight: $antonioMedium;
@@ -8,7 +8,7 @@
   color: $white;
 }
 
-.nav-background {
+.nav {
   @include flexbox-config($justify-content: space-around, $align-items: center);
   flex-wrap: wrap;
   border-bottom: 1px solid #979797;
@@ -22,22 +22,23 @@
   font-size: 11px;
   padding: 1rem 0;
 
-  .planet-list {
+  .nav__planet-list {
     display: flex;
     margin-left: auto;
   }
-  .hamburger {
+  .nav__hamburger {
     @include sm-tablets {
       display: none;
     }
   }
 }
 
-.navbar-brand {
-  color: #ffffff;
+.nav__brand {
+  color: $white;
   margin-left: 1em;
+  font-family: "Antonio", sans-serif;
 }
-.nav-planet-list {
+.nav__planet-list-container {
   display: none;
   @include sm-tablets {
     display: flex;
@@ -46,8 +47,13 @@
 }
 
 .nav__planet-name {
-  color: #ffffff;
+  color: #838391;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
   margin-right: 1rem;
+  &:hover {
+    color: #ffffff;
+  }
 }
 
 a.navbar-burger {
@@ -75,4 +81,9 @@ a.navbar-burger {
   @include sm-tablets {
     display: none;
   }
+}
+
+.nav__hamburger-active {
+  filter: brightness(0) saturate(100%) invert(54%) sepia(7%) saturate(498%)
+    hue-rotate(201deg) brightness(94%) contrast(87%);
 }

@@ -28,6 +28,16 @@
         block: 2em;
       }
       font-size: clamp(0.563rem, 0.398rem + 0.938vw, 0.75rem);
+      &:after {
+        // background: #ff7e1b;
+        content: "";
+        display: block;
+        height: 5px;
+        margin-top: 2em;
+        margin-bottom: -60%;
+        transition: width 0.3s;
+        width: 100%;
+      }
     }
   }
 }

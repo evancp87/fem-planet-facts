@@ -11,9 +11,9 @@
   right: 0;
   background-color: $black;
   transition: left 0.7s ease-in-out;
-  .sidebar-list {
+  .sidebar__list {
     padding-inline: 1em;
-    .sidebar-item {
+    .sidebar__item {
       border-bottom: 1px solid #838391;
       padding: 2rem;
       display: flex;
@@ -28,20 +28,16 @@
   }
 }
 
-.sidebar.activeSidebar {
+.sidebar.active-sidebar {
   left: 0px;
 }
 
-.absolute-nav {
-  position: absolute;
-}
-
-.planet-container {
+.sidebar__planet-container {
   display: flex;
   flex-direction: row;
   align-items: center;
 
-  .planet-icon {
+  .sidebar__planet-icon {
     width: 10px;
     height: 10px;
     border-radius: 50%;

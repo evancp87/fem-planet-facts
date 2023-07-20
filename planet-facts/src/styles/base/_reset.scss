@@ -8,7 +8,9 @@
 
 body {
   background: {
-    image: url(../../images/background-stars.svg);
+    // image: url(../images/background-stars.svg);
+    image: url("../../images/background-stars");
+
     position: center center;
     repeat: no-repeat;
     size: cover;
@@ -35,7 +37,7 @@ a {
 
 main {
   margin: auto;
-  max-width: 75vw;
+  max-width: 90vw;
 }
 
 .App {

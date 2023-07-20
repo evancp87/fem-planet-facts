@@ -9,7 +9,8 @@ export const PlanetState = (props) => {
   const [planets, setPlanets] = useState([]);
   const [currPlanet, setCurrPlanet] = useState("Mercury");
   const [selectedTab, setSelectedTab] = useState("Overview");
-  // colors of planets
+
+  // colors of planets to use dynamically in app
   const colors = {
     Mercury: "#DEF4FC",
     Venus: "#F7CC7F",
@@ -30,6 +31,7 @@ export const PlanetState = (props) => {
     setPlanets(planetNames);
   }, []);
 
+  // handles dynamic tab colors on desktop and mobile tabs
   const handleTabColor = (obj, tab, planet, property) => {
     if (selectedTab === tab) {
       return {
@@ -38,6 +40,14 @@ export const PlanetState = (props) => {
     }
     return {};
   };
+  // const handleMobileTabColor = (obj, tab, planet, property, pseudoProperty) => {
+  //   if (selectedTab === tab) {
+  //     return {
+  //       [property]: obj[planet],
+  //       [pseudoProperty]: obj[planet],
+  //   }
+  //   return {};
+  // };
 
   // gets api data and filters based on currentPlanet selection
   const setPlanetData = useCallback(async () => {
@@ -94,6 +104,7 @@ export const PlanetState = (props) => {
         selectedTab,
         setSelectedTab,
         handleTabColor,
+        // handleMobileTabColor,
       }}
     >
       {children}

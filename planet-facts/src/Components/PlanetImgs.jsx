@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
-import mercury from "../images/planet-mercury.svg";
-import geology from "../images/geology-mercury.png";
-import internal from "../images/planet-mercury-internal.svg";
+/* eslint react/prop-types: 0 */
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 // default is overview
 
@@ -10,25 +9,42 @@ const PlanetImgs = ({
   planetImage,
   planetInternalImage,
   planetGeologyInternal,
+  currPlanet,
 }) => {
+  // handles key for motion framer animation
+
+  const [animationKey, setAnimationKey] = useState(0);
   let activeImg;
 
+  // handles absolute positioned geology image, i.e two images
   if (selectedTab === "Internal Structure") {
     activeImg = planetInternalImage;
   } else if (selectedTab === "Overview" || selectedTab === "Surface Geology") {
     activeImg = planetImage;
   }
 
+  // Update the animationKey whenever selectedTab changes
+  useEffect(() => {
+    setAnimationKey((prevKey) => prevKey + 1);
+  }, [currPlanet]);
+
   return (
-    <div className="mt-3 flex-prop planet-img-container is-relative">
+    <motion.div
+      key={animationKey}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, y: "5vh" }}
+      exit={{ y: "-100%", opacity: 0, transition: { duration: 1 } }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="planet__img-container "
+    >
       <img src={activeImg} alt="#" className="planet-img" />
 
       {selectedTab === "Surface Geology" && (
-        <div className="mt-3 flex-prop geology-img absolute">
-          <img src={planetGeologyInternal} alt="#" className="absolute" />
+        <div className="planet__geology-img ">
+          <img src={planetGeologyInternal} alt="#" />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

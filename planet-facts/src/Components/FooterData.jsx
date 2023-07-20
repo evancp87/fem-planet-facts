@@ -1,25 +1,27 @@
+/* eslint react/prop-types: 0 */
+
 const FooterData = ({ rotation, revolution, temperature, radius }) => {
   return (
-    <footer className="footer ">
-      <ul className="footer-data-responsive footer-list mobile-widths-footer  ">
-        <li className=" border-full  footer-data-heading footer-data-responsive-item   ">
+    <section className="data ">
+      <ul className="data__list mobile-widths-footer  ">
+        <li className="  data__heading data__value-item    ">
           Rotation Time:
-          <span className="footer-data-value "> {rotation}</span>
+          <span className="data__value "> {rotation}</span>
         </li>
-        <li className=" border-solid footer-data-heading  footer-data-responsive-item  ">
+        <li className="  data__heading  data__value-item   ">
           Revolution Time:
-          <span className="footer-data-value  "> {revolution}</span>
+          <span className="data__value  "> {revolution}</span>
         </li>
-        <li className="  footer-data-heading footer-data-responsive-item   ">
+        <li className="  data__heading data__value-item    ">
           Radius:
-          <span className="footer-data-value  "> {radius}</span>
+          <span className="data__value  "> {radius}</span>
         </li>
-        <li className=" footer-data-heading footer-data-responsive-item   ">
+        <li className=" data__heading data__value-item    ">
           Average Temp.:
-          <span className="footer-data-value  "> {temperature}</span>
+          <span className="data__value  "> {temperature}</span>
         </li>
       </ul>
-    </footer>
+    </section>
   );
 };
 

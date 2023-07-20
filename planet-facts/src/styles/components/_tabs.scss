@@ -1,5 +1,5 @@
 @use "../abstracts/" as *;
-.desktop-options {
+.planet__tabs {
   display: none;
 
   @include sm-tablets {
@@ -13,6 +13,7 @@
   }
 
   button {
+    transition: background 0.5s ease-in-out;
     max-width: 100%;
     width: 100%;
     padding: 1rem;
@@ -21,8 +22,12 @@
     justify-content: flex-start;
     text-transform: uppercase;
     background: transparent;
+    cursor: pointer;
 
     border: 1px solid #838391;
+    &:hover {
+      background-color: #38384f;
+    }
   }
 }
 
@@ -31,8 +36,12 @@
     border-bottom: 3px solid green;
   }
 }
-.tab-value {
+.planet__tab-value {
   color: $white;
   margin-left: 1rem;
   white-space: nowrap;
+}
+
+.planet__tab-number {
+  color: #d8d8d8;
 }

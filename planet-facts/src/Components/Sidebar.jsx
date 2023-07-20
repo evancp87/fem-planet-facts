@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
-import { createPortal } from "react-dom";
-import classnames from "classnames";
-import PropTypes from "prop-types";
+/* eslint react/prop-types: 0 */
+import React, { useState } from "react";
 import chevron from "../images/icon-chevron.svg";
-import { PlanetsContext } from "../services/Planets/PlanetsContext";
 
 const Sidebar = ({
   setCurrPlanet,
@@ -12,28 +9,23 @@ const Sidebar = ({
   openSidebar,
   setOpenSidebar,
 }) => {
-  const [overlay, setOverlay] = useState(false);
-
+  // handles changing the planet from the sidebar
   const handleChangePlanet = (planet) => {
     setCurrPlanet(planet);
     setOpenSidebar(false);
   };
-  // const sidebarRef =useRef(null)
 
   console.log("the planets are:", planets, colors);
   return (
     <aside
-      className={openSidebar ? "sidebar activeSidebar" : "sidebar absolute"}
-      // className={classnames("sidebar", {
-      //   active: props.openSidebar,
-      // })}
+      className={openSidebar ? "sidebar active-sidebar" : "sidebar absolute"}
     >
-      <ul className="sidebar-list">
+      <ul className="sidebar__list">
         {planets.map((planet, index) => (
-          <li key={index} className="sidebar-item">
-            <div className="planet-container">
+          <li key={index} className="sidebar__item">
+            <div className="sidebar__planet-container">
               <div
-                className="planet-icon"
+                className="sidebar__planet-icon"
                 style={{
                   backgroundColor: colors[planet],
                   width: 10,
@@ -49,10 +41,6 @@ const Sidebar = ({
       </ul>
     </aside>
   );
-};
-
-Sidebar.propTypes = {
-  openSidebar: PropTypes.bool,
 };
 
 export default Sidebar;

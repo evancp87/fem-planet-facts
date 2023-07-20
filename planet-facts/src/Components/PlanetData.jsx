@@ -1,22 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
+/* eslint react/prop-types: 0 */
+import React from "react";
 import sourceIcon from "../images/icon-source.svg";
 
-const PlanetData = ({
-  overview,
-  structure,
-  geology,
-  overviewSource,
-  structureSource,
-  geologySource,
-  name,
-}) => {
+const PlanetData = ({ overview, overviewSource, name }) => {
+  //  overview is the default selected info tab and updates when parent rerenders
   return (
-    <div className="planet-text text-slate-100">
-      <h1 className="mt-4 uppercase heading-one-font">{name}</h1>
+    <div className="planet__text ">
+      <h1 className="planet__heading-one-font">{name}</h1>
 
-      <p className=" mt-2 body-size">{overview}</p>
-      <cite className="my-2 flex justify-center source">
-        <span className="source-heading">Source:</span>{" "}
+      <p className=" planet__data">{overview}</p>
+      <cite className="flex justify-center planet__source">
+        <span className="planet__source-heading">Source:</span>{" "}
         <a href={overviewSource}>Wikipedia</a>
         <img src={sourceIcon} alt="chevron" className="chevron " />
         {/* </span> */}

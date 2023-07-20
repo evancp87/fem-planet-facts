@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+/* eslint react/prop-types: 0 */
+import React, { useEffect, useContext } from "react";
 import { PlanetsContext } from "../services/Planets/PlanetsContext";
 
 const MobileNav = () => {
-  // const [selectedTab, setSelectedTab] = useState("Overview");
-
   const {
     setPlanetData,
     colors,
@@ -12,12 +11,15 @@ const MobileNav = () => {
     selectedTab,
     setSelectedTab,
     handleTabColor,
+    // handleMobileTabColor,
   } = useContext(PlanetsContext);
 
+  // sets selected tab
   const handleChangeInfo = (tab) => {
-    console.log("Helloooo, i ran");
     setSelectedTab(tab);
   };
+
+  // listens for changes to current planet, selected tab
   useEffect(() => {
     setPlanetData();
   }, [setPlanetData, currPlanet, setData, selectedTab]);
@@ -27,7 +29,13 @@ const MobileNav = () => {
     <div className="mobile-nav">
       <div className="mobile-nav__container ">
         <button
-          style={handleTabColor(colors, "Overview", currPlanet, "borderBottom")}
+          style={handleTabColor(
+            colors,
+            "Overview",
+            currPlanet,
+            "borderColor"
+            // "backgroundColor"
+          )}
           onClick={() => handleChangeInfo("Overview")}
           className={`mobile__nav-container-tab  ${
             selectedTab === "Overview" ? "active" : " "
@@ -38,9 +46,10 @@ const MobileNav = () => {
         <button
           style={handleTabColor(
             colors,
-            "Internal Structure",
+            "Overview",
             currPlanet,
-            "borderBottom"
+            "borderColor"
+            // "backgroundColor"
           )}
           onClick={() => handleChangeInfo("Internal Structure")}
           className={` mobile__nav-container-tab  ${
@@ -52,9 +61,10 @@ const MobileNav = () => {
         <button
           style={handleTabColor(
             colors,
-            "Surface Geology",
+            "Overview",
             currPlanet,
-            "borderBottom"
+            "borderColor"
+            // "backgroundColor"
           )}
           onClick={() => handleChangeInfo("Surface Geology")}
           className={` mobile__nav-container-tab ${
