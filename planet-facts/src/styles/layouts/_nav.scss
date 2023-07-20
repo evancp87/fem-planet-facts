@@ -44,6 +44,9 @@
     display: flex;
     flex-direction: row;
   }
+  @include lg-tablets-max-width {
+    padding-bottom: 1em;
+  }
 }
 
 .nav__planet-name {
@@ -51,8 +54,22 @@
   transition: color 0.5s ease-in-out;
   cursor: pointer;
   margin-right: 1rem;
+  // To prevent layout shifts with pseudo class
+  height: 15px;
   &:hover {
     color: #ffffff;
+  }
+  &:hover {
+    &:after {
+      background: var(--default-border);
+      content: "";
+      display: block;
+      position: relative;
+      top: -45px;
+      height: 5px;
+      width: 100%;
+      transition: width 0.3s;
+    }
   }
 }
 

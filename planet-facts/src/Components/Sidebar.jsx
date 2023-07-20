@@ -1,5 +1,4 @@
 /* eslint react/prop-types: 0 */
-import React, { useState } from "react";
 import chevron from "../images/icon-chevron.svg";
 
 const Sidebar = ({

@@ -32,8 +32,7 @@ const Nav = ({ openSidebar, handleOpenSidebar }) => {
               onClick={() => handleChangePlanet(planet)}
               className="nav__planet-name"
               style={{
-                borderTop: `solid 2px transparent`,
-                ":hover": { borderTop: `solid 2px ${colors[planet.name]}` },
+                "--default-border": colors[planet],
               }}
             >
               {planet}
