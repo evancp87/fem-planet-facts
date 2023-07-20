@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github repo](https://github.com/evancp87/fem-planet-facts)
-- Live Site URL: [Netlify live site](https://your-live-site-url.com)
+- Live Site URL: [Netlify live site](https://fem-planet-facts-app.netlify.app/)
 
 ## My process
 
