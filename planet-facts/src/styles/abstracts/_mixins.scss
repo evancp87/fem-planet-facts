@@ -75,6 +75,12 @@
     @content;
   }
 }
+
+@mixin md-tablets-max-width {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
 @mixin md-tablets-v2 {
   @media (min-width: 650px) {
     @content;

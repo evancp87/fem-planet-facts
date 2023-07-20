@@ -510,7 +510,7 @@ main {
   align-items: center;
   width: 100%;
   text-transform: uppercase;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
   padding: 2em;
 }
 @media (min-width: 600px) {
@@ -528,7 +528,7 @@ main {
   justify-items: center;
   align-items: center;
 }
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .planet {
     grid-template-rows: repeat(2, auto);
   }
@@ -674,6 +674,7 @@ main {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  gap: 0.7em;
   border-bottom: 1px solid #979797;
 }
 
@@ -711,7 +712,7 @@ main {
     flex-direction: row;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 700px) {
   .nav__planet-list-container {
     padding-bottom: 1em;
   }

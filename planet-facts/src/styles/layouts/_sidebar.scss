@@ -14,7 +14,7 @@
   .sidebar__list {
     padding-inline: 1em;
     .sidebar__item {
-      border-bottom: 1px solid #838391;
+      border-bottom: 1px solid $lightGray;
       padding: 2rem;
       display: flex;
       justify-content: space-between;
@@ -23,7 +23,7 @@
     }
 
     p {
-      color: #ffffff;
+      color: $white;
     }
   }
 }

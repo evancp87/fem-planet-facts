@@ -11,14 +11,15 @@
 .nav {
   @include flexbox-config($justify-content: space-around, $align-items: center);
   flex-wrap: wrap;
-  border-bottom: 1px solid #979797;
+  gap: 0.7em;
+  border-bottom: 1px solid $nav-border;
 }
 .planet-nav {
   @include flexbox-config($justify-content: space-between);
 
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
-  color: #838391;
+  color: $lightGray;
   font-size: 11px;
   padding: 1rem 0;
 
@@ -44,7 +45,7 @@
     display: flex;
     flex-direction: row;
   }
-  @include lg-tablets-max-width {
+  @include md-tablets-max-width {
     padding-bottom: 1em;
   }
 }
@@ -57,7 +58,7 @@
   // To prevent layout shifts with pseudo class
   height: 15px;
   &:hover {
-    color: #ffffff;
+    color: $white;
   }
   &:hover {
     &:after {

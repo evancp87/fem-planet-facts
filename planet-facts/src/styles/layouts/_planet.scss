@@ -7,7 +7,7 @@
   justify-items: center;
   align-items: center;
 
-  @include sm-tablets {
+  @include md-tablets-v2 {
     grid-template-rows: repeat(2, auto);
   }
 

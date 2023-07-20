@@ -7,8 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // font-size: $tab-btns;
-    // font-weight: $spartanBold;
     width: clamp(12.5rem, 3.125rem + 30vw, 21.875rem);
   }
 
@@ -24,7 +22,7 @@
     background: transparent;
     cursor: pointer;
 
-    border: 1px solid #838391;
+    border: 1px solid $lightGray;
     &:hover {
       background-color: #38384f;
     }

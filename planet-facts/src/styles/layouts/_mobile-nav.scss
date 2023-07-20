@@ -1,17 +1,12 @@
 @use "../abstracts" as *;
 
 .mobile-nav {
-  border-bottom: 1px solid #979797;
+  border-bottom: 1px solid $nav-border;
 
   @include sm-tablets {
     display: none;
   }
-  //   button {
-  //     font-size: 9px;
-  //     color: gray;
-  //     background: none;
-  //     border: none;
-  //   }
+
   .mobile-nav__container {
     @include flexbox-config(
       $flex-direction: row,
