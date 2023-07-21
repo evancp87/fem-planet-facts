@@ -24,7 +24,9 @@ export const PlanetState = (props) => {
 
   // gets names of planets
   const getPlanetNames = useCallback(async () => {
-    const { data } = await axios.get("src/data.json");
+    const { data } = await axios.get(
+      "https://fem-planet-facts-app.netlify.app/planet-facts/src/data.json"
+    );
     console.log(data);
 
     const planetNames = data.map((planet) => planet.name);
@@ -40,14 +42,6 @@ export const PlanetState = (props) => {
     }
     return {};
   };
-  // const handleMobileTabColor = (obj, tab, planet, property, pseudoProperty) => {
-  //   if (selectedTab === tab) {
-  //     return {
-  //       [property]: obj[planet],
-  //       [pseudoProperty]: obj[planet],
-  //   }
-  //   return {};
-  // };
 
   // gets api data and filters based on currentPlanet selection
   const setPlanetData = useCallback(async () => {
