@@ -24,7 +24,9 @@ export const PlanetState = (props) => {
 
   // gets names of planets
   const getPlanetNames = useCallback(async () => {
-    const { data } = await axios.get("/data.json");
+    const { data } = await axios.get(
+      "https://fem-planet-facts-app.netlify.app/data.json"
+    );
     console.log(data);
 
     const planetNames = data.map((planet) => planet.name);
