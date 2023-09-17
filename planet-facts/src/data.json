@@ -19,9 +19,9 @@
     "radius": "2,439.7 KM",
     "temperature": "430°c",
     "images": {
-      "planet": "./src/images/planet-mercury.svg",
-      "internal": "./src/images/planet-mercury-internal.svg",
-      "geology": "./src/images/geology-mercury.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-mercury.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-mercury-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-mercury.png"
     }
   },
   {
@@ -43,9 +43,9 @@
     "radius": "6,051.8 KM",
     "temperature": "471°c",
     "images": {
-      "planet": "./src/images/planet-venus.svg",
-      "internal": "./src/images/planet-venus-internal.svg",
-      "geology": "./src/images/geology-venus.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-venus.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-venus-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-venus.png"
     }
   },
   {
@@ -67,9 +67,9 @@
     "radius": "6,371 KM",
     "temperature": "16°c",
     "images": {
-      "planet": "./src/images/planet-earth.svg",
-      "internal": "./src/images/planet-earth-internal.svg",
-      "geology": "./src/images/geology-earth.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-earth.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-earth-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-earth.png"
     }
   },
   {
@@ -91,9 +91,9 @@
     "radius": "3,389.5 KM",
     "temperature": "-28°c",
     "images": {
-      "planet": "./src/images/planet-mars.svg",
-      "internal": "./src/images/planet-mars-internal.svg",
-      "geology": "./src/images/geology-mars.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-mars.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-mars-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-mars.png"
     }
   },
   {
@@ -115,9 +115,9 @@
     "radius": "69,911 KM",
     "temperature": "-108°c",
     "images": {
-      "planet": "./src/images/planet-jupiter.svg",
-      "internal": "./src/images/planet-jupiter-internal.svg",
-      "geology": "./src/images/geology-jupiter.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-jupiter.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-jupiter-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-jupiter.png"
     }
   },
   {
@@ -139,9 +139,9 @@
     "radius": "58,232 KM",
     "temperature": "-138°c",
     "images": {
-      "planet": "./src/images/planet-saturn.svg",
-      "internal": "./src/images/planet-saturn-internal.svg",
-      "geology": "./src/images/geology-saturn.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-saturn.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-saturn-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-saturn.png"
     }
   },
   {
@@ -163,9 +163,9 @@
     "radius": "25,362 KM",
     "temperature": "-195°c",
     "images": {
-      "planet": "./src/images/planet-uranus.svg",
-      "internal": "./src/images/planet-uranus-internal.svg",
-      "geology": "./src/images/geology-uranus.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-uranus.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-uranus-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-uranus.png"
     }
   },
   {
@@ -187,9 +187,9 @@
     "radius": "24,622 KM",
     "temperature": "-201°c",
     "images": {
-      "planet": "./src/images/planet-neptune.svg",
-      "internal": "./src/images/planet-neptune-internal.svg",
-      "geology": "./src/images/geology-neptune.png"
+      "planet": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-neptune.svg",
+      "internal": "https://planet-facts.s3.eu-west-2.amazonaws.com/planet-neptune-internal.svg",
+      "geology": "https://planet-facts.s3.eu-west-2.amazonaws.com/geology-neptune.png"
     }
   }
 ]
